@@ -1,0 +1,183 @@
+dataModelId: b6c36106-dc91-44ad-9634-0e593a7ccf4f
+name: Big Buys Data Model (1)
+url: https://staging.sigmacomputing.io/papercranestaging/data-model/Big-Buys-Data-Model-1-5yRTiJdCJawM6iwxLdVcjt
+documentVersion: 1
+latestDocumentVersion: 1
+ownerId: boc6DBsb49MbLnGC3Comv6P2N1Ta6
+folderId: 6c3dc976-6bb8-4daf-be01-7e9c2732431f
+createdBy: boc6DBsb49MbLnGC3Comv6P2N1Ta6
+updatedBy: boc6DBsb49MbLnGC3Comv6P2N1Ta6
+createdAt: '2026-10-23T16:03:03.771Z'
+updatedAt: '2026-10-23T16:03:03.771Z'
+schemaVersion: 1
+pages:
+  - id: kWJLPO9s2y
+    name: data
+    elements:
+      - id: stA4vYTkOW
+        kind: table
+        source:
+          connectionId: a9d45cfe-ff65-4515-8193-a7072602a1ee
+          kind: warehouse-table
+          path:
+            - SE_DEMO_DB
+            - BIG_BUYS
+            - BIG_BUYS_POS
+        columns:
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/ORDER_NUMBER
+            formula: '[BIG_BUYS_POS/Order Number]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/DATE
+            formula: '[BIG_BUYS_POS/Date]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/PRODUCT_KEY
+            formula: '[BIG_BUYS_POS/Product Key]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/SKU_NUMBER
+            formula: '[BIG_BUYS_POS/Sku Number]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/QUANTITY
+            formula: '[BIG_BUYS_POS/Quantity]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/COST
+            formula: '[BIG_BUYS_POS/Cost]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/PRICE
+            formula: '[BIG_BUYS_POS/Price]'
+          - id: py0nuBNgk1
+            formula: '[Quantity] * [Price]'
+            name: Sales Amount
+            description: Quantity * Price = sales amount (revenue) for this product in this order
+          - id: mMDar8It1s
+            formula: '[Quantity] * [Cost]'
+            name: Cost Amount
+            description: Quantity * Cost = cost of goods sold (COGS) for this product in this order
+          - id: _jgOD5pHOC
+            formula: '[BIG_BUYS_POS/Product Type]'
+          - id: geFMxYQWwa
+            formula: '[BIG_BUYS_POS/Product Family]'
+          - id: 8On5fNu1Cn
+            formula: '[BIG_BUYS_POS/Product Line]'
+          - id: 8KHlgIw3sC
+            formula: '[BIG_BUYS_POS/Product Name]'
+          - id: nD4Z1y6ose
+            formula: '[BIG_BUYS_POS/Product Tier]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/BRAND
+            formula: '[BIG_BUYS_POS/Brand]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/STORE_NAME
+            formula: '[BIG_BUYS_POS/Store Name]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/STORE_KEY
+            formula: '[BIG_BUYS_POS/Store Key]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/STORE_TIER
+            formula: '[BIG_BUYS_POS/Store Tier]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/STORE_TIER_ORDER
+            formula: '[BIG_BUYS_POS/Store Tier Order]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/STORE_REGION
+            formula: '[BIG_BUYS_POS/Store Region]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/STORE_STATE
+            formula: '[BIG_BUYS_POS/Store State]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/STORE_CITY
+            formula: '[BIG_BUYS_POS/Store City]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/MERCHANT_ID
+            formula: '[BIG_BUYS_POS/Merchant Id]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/STORE_ZIP_CODE
+            formula: '[BIG_BUYS_POS/Store Zip Code]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/STORE_LATITUDE
+            formula: '[BIG_BUYS_POS/Store Latitude]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/STORE_LONGITUDE
+            formula: '[BIG_BUYS_POS/Store Longitude]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/COUNTY_NAME
+            formula: '[BIG_BUYS_POS/County Name]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/ZIP_POPULATION
+            formula: '[BIG_BUYS_POS/Zip Population]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/CUST_KEY
+            formula: '[BIG_BUYS_POS/Cust Key]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/CUSTOMER_NAME
+            formula: '[BIG_BUYS_POS/Customer Name]'
+          - id: inode-4oaI2we1tktrsjPGK0u0GS/CUST_JSON
+            formula: '[BIG_BUYS_POS/Cust Json]'
+        name: Big Buys POS
+        metrics:
+          - id: i0GZiv2QXe
+            formula: Sum([Sales Amount]) / CountDistinct([Cust Key])
+            name: Spend Per Customer
+            description: Sales amount (revenue) per unique customer
+            format:
+              kind: number
+              formatString: $,.2f
+          - id: lTi8NwQxIT
+            formula: CountDistinct([Store Key])
+            name: Store Count
+            description: total number of unique stores
+          - id: 6scylGn4lw
+            formula: CountDistinct([Cust Key])
+            name: Customer Count
+            description: total number of unique customers
+          - id: Y5pu46gJ8Y
+            formula: Sum([Sales Amount] - [Cost Amount]) / Sum([Sales Amount])
+            name: Margin %
+            format:
+              kind: number
+              formatString: ',.2%'
+          - id: dRRml96KU_
+            formula: Max([Date])
+            name: Lastest Date
+            description: The max or latest transaction date for a given grouping
+          - id: WIqRa9n6Ow
+            formula: Sum([Quantity])
+            name: Total Quantity
+        folders:
+          - id: kDo3izEw0l
+            name: Product
+            items:
+              - _jgOD5pHOC
+              - geFMxYQWwa
+              - 8On5fNu1Cn
+              - 8KHlgIw3sC
+              - nD4Z1y6ose
+              - inode-4oaI2we1tktrsjPGK0u0GS/BRAND
+          - id: DpY5oOfns8
+            name: Store
+            items:
+              - inode-4oaI2we1tktrsjPGK0u0GS/STORE_NAME
+              - inode-4oaI2we1tktrsjPGK0u0GS/STORE_KEY
+              - inode-4oaI2we1tktrsjPGK0u0GS/STORE_TIER
+              - inode-4oaI2we1tktrsjPGK0u0GS/STORE_TIER_ORDER
+              - inode-4oaI2we1tktrsjPGK0u0GS/STORE_REGION
+              - inode-4oaI2we1tktrsjPGK0u0GS/STORE_STATE
+              - inode-4oaI2we1tktrsjPGK0u0GS/STORE_CITY
+        order:
+          - inode-4oaI2we1tktrsjPGK0u0GS/ORDER_NUMBER
+          - inode-4oaI2we1tktrsjPGK0u0GS/DATE
+          - inode-4oaI2we1tktrsjPGK0u0GS/PRODUCT_KEY
+          - inode-4oaI2we1tktrsjPGK0u0GS/SKU_NUMBER
+          - inode-4oaI2we1tktrsjPGK0u0GS/QUANTITY
+          - inode-4oaI2we1tktrsjPGK0u0GS/COST
+          - inode-4oaI2we1tktrsjPGK0u0GS/PRICE
+          - py0nuBNgk1
+          - mMDar8It1s
+          - kDo3izEw0l
+          - DpY5oOfns8
+          - inode-4oaI2we1tktrsjPGK0u0GS/MERCHANT_ID
+          - inode-4oaI2we1tktrsjPGK0u0GS/STORE_ZIP_CODE
+          - inode-4oaI2we1tktrsjPGK0u0GS/STORE_LATITUDE
+          - inode-4oaI2we1tktrsjPGK0u0GS/STORE_LONGITUDE
+          - inode-4oaI2we1tktrsjPGK0u0GS/COUNTY_NAME
+          - inode-4oaI2we1tktrsjPGK0u0GS/ZIP_POPULATION
+          - inode-4oaI2we1tktrsjPGK0u0GS/CUST_KEY
+          - inode-4oaI2we1tktrsjPGK0u0GS/CUSTOMER_NAME
+          - inode-4oaI2we1tktrsjPGK0u0GS/CUST_JSON
+  - id: 3NCsP7uKIu
+    name: hash
+    elements:
+      - id: fOwbjDMBFc
+        kind: table
+        source:
+          connectionId: a9d45cfe-ff65-4515-8193-a7072602a1ee
+          statement: select 1
+          kind: sql
+        columns:
+          - id: EKbVvH50kD
+            formula: '[Custom SQL/1]'
+          - id: 0PG56N1hhh
+            formula: SHA256("1d995157e5bc477939d509bfa0c50c94ef13a633c6bc4b5c9eea0af6c83e471e" & CurrentUserEmail())
+            name: email hash
+        name: email hash
+        order:
+          - EKbVvH50kD
+          - 0PG56N1hhh
+kind: data-model
